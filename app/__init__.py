@@ -1,0 +1,2 @@
+"""SQLPilot application package."""
+

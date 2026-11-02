@@ -1,0 +1,16 @@
+.env
+.env.database.local
+.env.knowledge.local
+__pycache__/
+.pytest_cache/
+*.pyc
+data/*.db
+data/
+output/
+.idea/
+.pytest_tmp*/
+.test-tmp/
+.tmp/
+sqlpilot.egg-info/
+*.log
+docs/RESUME_*.md

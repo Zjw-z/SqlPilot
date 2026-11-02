@@ -1,0 +1,33 @@
+[project]
+name = "sqlpilot"
+version = "0.1.0"
+description = "A trustworthy Text-to-SQL copilot for healthcare analytics"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "pydantic>=2.8,<3",
+  "sqlglot>=26,<27",
+  "openai>=1.100,<3",
+  "python-dotenv>=1.0,<2",
+  "pydantic-settings>=2.0,<3",
+  "sqlalchemy>=2.0,<3",
+  "aiosqlite>=0.20,<1",
+  "asyncpg>=0.29,<1",
+  "alembic>=1.13,<2",
+  "cryptography>=44,<46",
+  "pyaes>=1.6,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "httpx>=0.27,<1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["static/*.html"]

@@ -1,0 +1,19 @@
+services:
+  sqlpilot:
+    build:
+      context: .
+    container_name: sqlpilot-app
+    restart: unless-stopped
+    env_file:
+      - .env
+      - .env.database.local
+      - .env.knowledge.local
+    environment:
+      SQLPILOT_DB_HOST: host.docker.internal
+      SQLPILOT_KB_HOST: host.docker.internal
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
